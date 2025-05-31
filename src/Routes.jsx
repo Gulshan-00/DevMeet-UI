@@ -1,44 +1,51 @@
-import React from 'react'
-import { createBrowserRouter, Navigate, RouterProvider } from 'react-router'
-import Body from './components/Body'
-import Signup from "./components/Signup"
-import Login from "./components/Login"
-import Feed from './components/Feed'
+import React from "react";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
+import Body from "./components/Body";
+import Signup from "./components/Signup";
+import Login from "./components/Login";
+import Feed from "./components/Feed";
+import Profile from "./components/Profile";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 const Routes = () => {
-
-    const AllRoutes = createBrowserRouter([
+  const AllRoutes = createBrowserRouter([
+    {
+      path: "/",
+      element: <Body />,
+      children: [
         {
-            path:"/",
-            element:<Body/>,
-            children: [
-                {
-                   path:"",
-                   element:<Navigate to="feed" replace/>
-                },
-                {
-                   path:"feed",
-                   element:<Feed/>
-                },
-                {
-                    path:"signup",
-                    element:<Signup/>
-
-                },
-                {
-                    path:"login",
-                    element:<Login/>,
-                },
-            ]
+          path: "",
+          element: <Navigate to="feed" replace />,
         },
-        
-    ])
+        {
+          path: "feed",
+          element: <Feed />,
+        },
+        {
+          path: "profile",
+          element: <Profile />,
+        },
+
+        {
+          path: "signup",
+          element: <Signup />,
+        },
+        {
+          path: "login",
+          element: <Login />,
+        },
+      ],
+    },
+  ]);
 
   return (
     <div>
-        <RouterProvider router={AllRoutes}/>
+      <Provider store={appStore}>
+      <RouterProvider router={AllRoutes} />
+      </Provider>
     </div>
-  )
-}
+  );
+};
 
-export default Routes
+export default Routes;
