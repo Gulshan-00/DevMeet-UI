@@ -28,7 +28,6 @@ const Login = () => {
 
        //the data which is coming from the backend
        const data= await response.data;
-       console.log(data);
        Dispatch(addUser(data));
 
      navigate('/feed');
