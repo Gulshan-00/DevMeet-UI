@@ -19,20 +19,20 @@ const Routes = () => {
           element: <Navigate to="feed" replace />,
         },
         {
-          path: "feed",
+          path: "/feed",
           element: <Feed />,
         },
         {
-          path: "profile",
+          path: "/profile",
           element: <Profile />,
         },
 
         {
-          path: "signup",
+          path: "/signup",
           element: <Signup />,
         },
         {
-          path: "login",
+          path: "/login",
           element: <Login />,
         },
       ],

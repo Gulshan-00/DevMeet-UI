@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router";
 import { addUser } from "../utils/userSlice";
 import { BASE_URL } from "../utils/Constents";
+import { Link } from "react-router";
 
 const Login = () => {
   const [emailId, setEmailId] = useState("gulshan@gmail.com");
@@ -38,18 +39,17 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-amber-300 card w-full max-w-sm shrink-0 shadow-2xl flex justify-center self-center">
-      <div className="card-body">
-        <fieldset className="fieldset">
-          <label className="label">Email</label>
+    <div className="bg-blue-400 shadow-2xl flex flex-col justify-center self-center p-20 rounded-xl ">
+  
+          <label className="label font-bold text-black">Email</label>
           <input
             type="email"
-            className="input"
+            className="input px-10"
             value={emailId}
             onChange={(e) => setEmailId(e.target.value)}
             placeholder="Email"
           />
-          <label className="label">Password</label>
+          <label className="label font-bold text-black">Password</label>
           <input
             type="password"
             className="input"
@@ -57,14 +57,18 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <div>
-            <a className="link link-hover">Forgot password?</a>
+          <div className="self-center">
+            <a className="link link-hover font-bold text-black">Forgot password?</a>
           </div>
-          <button className="btn btn-neutral mt-4" onClick={handleLogin}>
+          <button className="btn btn-neutral mt-4 hover:bg-blue-400 hover:text-blue-950" onClick={handleLogin}>
             Login
           </button>
-        </fieldset>
-      </div>
+
+          <div className="self-center mt-5">
+            <a className="link link-hover text-black">
+            <Link to="/signup">New User? SignUp</Link>
+            </a>
+          </div>
     </div>
   );
 };

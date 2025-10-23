@@ -6,7 +6,7 @@ import { Outlet } from "react-router";
 
 const Body = () => {
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center gap-28">
       <Navbar />
        <Outlet/>
       <Footer />

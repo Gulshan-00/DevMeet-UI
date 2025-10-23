@@ -6,7 +6,7 @@ const Navbar = () => {
   const user = useSelector((store) => store.user.items[0]);
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="navbar bg-base-100 shadow-sm ">
       <div className="flex-1">
         <a className="btn btn-ghost text-xl">DevMeet</a>
       </div>
@@ -44,10 +44,10 @@ const Navbar = () => {
           >
             <li>
               <Link to={"profile"}>
-                <a className="justify-between">
+                {/* <a className="justify-between"> */}
                   Profile
-                  {/* <span className="badge">New</span> */}
-                </a>
+                      {/* <span className="badge">New</span> */}
+                {/* </a> */}
               </Link>
             </li>
             <li>
