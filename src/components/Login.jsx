@@ -39,12 +39,12 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-blue-400 shadow-2xl flex flex-col justify-center self-center p-20 rounded-xl ">
-  
+    <div className="bg-blue-100 shadow-2xl flex flex-col justify-center self-center p-20 rounded-xl ">
+             <h1 className="text-black font-bold self-center pb-4 text-3xl">Login</h1>
           <label className="label font-bold text-black text-lg">Email</label>
           <input
             type="email"
-            className="input px-10 text-lg"
+            className="input textarea-lg bg-gray-400"
             value={emailId}
             onChange={(e) => setEmailId(e.target.value)}
             placeholder="Email"
@@ -52,7 +52,7 @@ const Login = () => {
           <label className="label font-bold text-black text-lg">Password</label>
           <input
             type="password "
-            className="input px-10 text-lg"
+            className="input textarea-lg bg-gray-400"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
@@ -60,7 +60,7 @@ const Login = () => {
           <div className="self-center">
             <a className="link link-hover font-bold text-black">Forgot password?</a>
           </div>
-          <button className="btn btn-neutral mt-4 hover:bg-blue-400 hover:text-blue-950" onClick={handleLogin}>
+          <button className="bg-pink-400 p-2 rounded-md cursor-pointer border border-pink-400 hover:border hover:border-pink-800 mt-4 " onClick={handleLogin}>
             Login
           </button>
 
