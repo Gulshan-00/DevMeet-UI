@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router";
 
 const Navbar = () => {
-  const user = useSelector((store) => store.user.items[0]);
+  const user = useSelector((store) => store.user);
+  console.log(user);
 
   return (
     <div className="navbar bg-base-100 shadow-sm ">
@@ -25,15 +26,11 @@ const Navbar = () => {
           >
 
             {/* if user is present then only show this */}
-            {user ? (
-              <div className="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src={user.photoUrl} />
-              </div>
-            ) : (
+            {user && (
               <div className="w-10 rounded-full">
                 <img
-                  alt="Tailwind CSS Navbar component"
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                  alt="user photo"
+                  src={user.photoUrl}
                 />
               </div>
             )}

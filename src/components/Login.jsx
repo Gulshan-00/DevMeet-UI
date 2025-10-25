@@ -22,7 +22,7 @@ const Login = () => {
           password,
         },
         {
-          withCredentials: true,
+          withCredentials: true,                //because of this withCredential the cookie is stored in the browser 
         }
       );
     
@@ -41,18 +41,18 @@ const Login = () => {
   return (
     <div className="bg-blue-400 shadow-2xl flex flex-col justify-center self-center p-20 rounded-xl ">
   
-          <label className="label font-bold text-black">Email</label>
+          <label className="label font-bold text-black text-lg">Email</label>
           <input
             type="email"
-            className="input px-10"
+            className="input px-10 text-lg"
             value={emailId}
             onChange={(e) => setEmailId(e.target.value)}
             placeholder="Email"
           />
-          <label className="label font-bold text-black">Password</label>
+          <label className="label font-bold text-black text-lg">Password</label>
           <input
-            type="password"
-            className="input"
+            type="password "
+            className="input px-10 text-lg"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
